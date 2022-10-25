@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Chat System</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            iframe{
+                border:none;
+                width:100%;
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                margin: auto;
+                width:500px;
+            }
+            html{
+                width:100%;
+            }
+        </style>
+
+    </head>
+    <body>
+        <iframe src="?action=getMessage"></iframe>
+        <iframe src="?action=sendMessage&message="></iframe>
+        <form>
+            <input type="hidden" name="action" value="unsubscribe">
+            <input type="Submit" Value="Close">
+        </form>
+    </body>
+    
+    <script>
+    const unsubscribeForm = document.getElementById("unsubscribeForm");    
+    
+    window.addEventListener("onbeforeunload",(event)=> {
+            unsubscribeForm.submit();
+            event.preventDefault;
+            e.returnValue = "";
+            return "null";
+        });
+        
+    </script>
+</html>
